@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=IOrientationStrategy
+comment0.text=Orientation\ Strategy\ Interface
+comment1.params=
+comment1.target=void\ selectA()
+comment1.text=Select\ A\ Menu\ Option
+comment2.params=
+comment2.target=void\ selectB()
+comment2.text=Select\ B\ Menu\ Option
+comment3.params=
+comment3.target=void\ selectC()
+comment3.text=Select\ C\ Menu\ Option
+comment4.params=
+comment4.target=void\ selectD()
+comment4.text=Select\ D\ Menu\ Option
+comment5.params=
+comment5.target=void\ selectE()
+comment5.text=Select\ E\ Menu\ Option
+numComments=6
