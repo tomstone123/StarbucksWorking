@@ -1,12 +1,12 @@
 #BlueJ class context
 comment0.target=IPinState
-comment0.text=\r\n\ Pin\ State\ Interfaces\r\n
+comment0.text=\n\ Pin\ State\ Interfaces\n
 comment1.params=
 comment1.target=void\ backspace()
 comment1.text=Backspace\ Event
 comment2.params=digit
 comment2.target=void\ number(java.lang.String)
-comment2.text=\r\n\ Number\ Event\r\n\ @param\ digit\ Digit/Key\ Pressed\r\n
+comment2.text=\n\ Number\ Event\n\ @param\ digit\ Digit/Key\ Pressed\n
 comment3.params=
 comment3.target=void\ validPin()
 comment3.text=Valid\ Pin\ Event

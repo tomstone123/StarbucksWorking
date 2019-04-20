@@ -1,6 +1,9 @@
 #BlueJ class context
 comment0.target=AddCard
-comment0.text=\r\n\ Add\ New\ Card\ Screen\r\n
+comment0.text=\n\ Add\ New\ Card\ Screen\n
 comment1.params=
 comment1.target=AddCard()
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ display()
+comment2.text=\n\ \n\ \n
+numComments=3
