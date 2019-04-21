@@ -1,6 +1,6 @@
 
 
-  
+package starbucks ;
 
 /** Three Pin Digit State */
 public class ThreePinDigits implements IPinState

@@ -1,6 +1,6 @@
 
 
-  
+package starbucks ;
 
 /** Menu Receiver Interface */
 public interface IMenuReceiver

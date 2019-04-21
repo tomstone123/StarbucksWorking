@@ -1,6 +1,6 @@
 
 
-  
+package starbucks ;
 
 /** Pin State Machine Interface */
 public interface IPinStateMachine

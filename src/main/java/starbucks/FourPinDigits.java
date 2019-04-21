@@ -1,6 +1,6 @@
 
 
-  
+package starbucks ;
 
 /** For Pin Digits State */
 public class FourPinDigits implements IPinState

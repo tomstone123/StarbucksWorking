@@ -1,6 +1,6 @@
 
 
-  
+package starbucks ;
 
 /** Spacer "Blank Line" Component */
 public class Spacer implements IDisplayComponent, ITouchEventHandler {

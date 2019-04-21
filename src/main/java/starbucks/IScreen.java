@@ -1,6 +1,6 @@
 
 
-  
+package starbucks ;
 
 /** Screen Interface */
 public interface IScreen

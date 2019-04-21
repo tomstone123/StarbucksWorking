@@ -1,6 +1,6 @@
 
 
-  
+package starbucks ;
 
 /** One Pig Digit State */
 public class OnePinDigit implements IPinState
