@@ -5,6 +5,8 @@ package starbucks;
 /** Settings Screen */
 public class Settings extends Screen
 {
+    private IScreen addcard ;
+    private IFrame frame ;
     
     public Settings(){
 
@@ -24,8 +26,7 @@ public class Settings extends Screen
                output += " Billing Info\n" ;
                output += " Passcode\n" ;
                output += " \n" ;
-               output += " About\n" ;
-               output += " TOC\n" ;
+               output += " About|Terms\n" ;
                output += " Help\n" ;
 
         return output ;
@@ -37,6 +38,9 @@ public class Settings extends Screen
             if( x > 0 && x < 4 )
             {
                 System.err.println( "Add Card Pressed" ) ;
+                addcard = new AddCard() ;
+                frame.setCurrentScreen( addcard ) ;
+                frame.display();
             }
         }
         
