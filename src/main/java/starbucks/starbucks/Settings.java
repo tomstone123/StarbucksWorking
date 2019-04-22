@@ -5,12 +5,20 @@ package starbucks;
 /** Settings Screen */
 public class Settings extends Screen
 {
-    private IScreen addcard ;
+    private AddCard addcard ;
     private IFrame frame ;
     
+    private KeyPad kp;
+    
     public Settings(){
+        
+        kp = new KeyPad() ;
+        
         addcard = new AddCard() ;
+        addcard.addSubComponent( kp ) ;
+        
         frame = new Frame( addcard);
+        
     }
 
     
@@ -39,11 +47,12 @@ public class Settings extends Screen
             if( x > 0 && x < 4 )
             {
                 System.err.println( "Add Card Pressed" ) ;
-                
+                System.out.println( "Add Card Reached3" ) ;
                 frame.setCurrentScreen( addcard ) ;
                 frame.display();
                 //frame.screen();
                 //frame.contents();
+                System.out.println( "Add Card Reached4" ) ;
             }
         }
         

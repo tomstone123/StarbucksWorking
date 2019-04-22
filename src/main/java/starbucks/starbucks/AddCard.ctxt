@@ -6,6 +6,4 @@ comment1.target=AddCard()
 comment2.params=
 comment2.target=java.lang.String\ display()
 comment2.text=\r\n\ \r\n\ \r\n
-comment3.params=
-comment3.target=java.lang.String\ screenContents()
-numComments=4
+numComments=3
