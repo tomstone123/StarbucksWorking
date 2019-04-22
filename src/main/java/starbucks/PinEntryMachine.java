@@ -1,6 +1,6 @@
 
 
-package starbucks ;
+  
 
 /** Pin Entry Machine - Context for State Pattern */
 public class PinEntryMachine implements IPinStateMachine, IKeyPadObserver, IPinAuthSubject

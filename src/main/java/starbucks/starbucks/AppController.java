@@ -48,6 +48,7 @@ public class AppController implements IApp {
               }
         }
         ) ;
+        
         displayPayments.setReceiver(
           new IMenuReceiver() {
               /** Command Action */
@@ -56,6 +57,7 @@ public class AppController implements IApp {
               }
         }
         ) ;
+        
         displayRewards.setReceiver(
           new IMenuReceiver() {
               /** Command Action */
@@ -64,6 +66,7 @@ public class AppController implements IApp {
               }
         }
         ) ;
+        
         doStore.setReceiver(
           new IMenuReceiver() {
               /** Command Action */

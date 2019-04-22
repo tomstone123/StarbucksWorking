@@ -1,6 +1,6 @@
 
 
-package starbucks ;
+  
 
 /** Orientation Strategy Interface */
 public interface IOrientationStrategy

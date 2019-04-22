@@ -9,7 +9,8 @@ public class Settings extends Screen
     private IFrame frame ;
     
     public Settings(){
-
+        addcard = new AddCard() ;
+        frame = new Frame( addcard);
     }
 
     
@@ -38,9 +39,11 @@ public class Settings extends Screen
             if( x > 0 && x < 4 )
             {
                 System.err.println( "Add Card Pressed" ) ;
-                addcard = new AddCard() ;
+                
                 frame.setCurrentScreen( addcard ) ;
                 frame.display();
+                //frame.screen();
+                //frame.contents();
             }
         }
         

@@ -1,6 +1,6 @@
 
 
-package starbucks ;
+  
 
 /** Display Component Interface */
 public interface IDisplayComponent
