@@ -1,0 +1,13 @@
+Passcode.java
+keyeventupdate
+
+state machine digits
+
+value = "[";
+        for( int count: countarraylist)
+            value = value + count ;
+
+        value = value + "]"
+
+appauthproxy
+observers
