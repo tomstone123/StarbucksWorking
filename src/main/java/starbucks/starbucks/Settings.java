@@ -7,18 +7,17 @@ public class Settings extends Screen
 {
     private AddCard addcard ;
     private IFrame frame ;
-    
+    private IMenuCommand addcardnow ;
+        
     private KeyPad kp;
     
-    public Settings(){
-        
-        kp = new KeyPad() ;
-        
+    public Settings(IMenuCommand t){
+        addcardnow = t ;
+       
         addcard = new AddCard() ;
         addcard.addSubComponent( kp ) ;
         
-        frame = new Frame( addcard);
-        
+
     }
 
     
@@ -47,14 +46,18 @@ public class Settings extends Screen
             if( x > 0 && x < 4 )
             {
                 System.err.println( "Add Card Pressed" ) ;
-                System.out.println( "Add Card Reached3" ) ;
-                frame.setCurrentScreen( addcard ) ;
-                frame.display();
-                //frame.screen();
-                //frame.contents();
-                System.out.println( "Add Card Reached4" ) ;
+                addcardnow.execute();
+                
             }
         }
         
     }
+    
+    /*
+     * To be used in the future
+     */
+    public void settingOptions(IMenuCommand s) {
+        addcardnow = s ;
+    }
+    
 }

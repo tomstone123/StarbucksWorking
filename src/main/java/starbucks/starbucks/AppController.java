@@ -20,16 +20,30 @@ public class AppController implements IApp {
     //My Code
     private IScreen settings ;
     private IMenuCommand displaySettings ;
+    private IScreen addcard ;
+    private IMenuCommand displayAddcard ;
 
     public AppController() {
         mycards = new MyCards() ;
         store = new Store() ;
         rewards = new Rewards() ;
         payments = new Payments() ;
-        frame = new Frame( mycards ) ;
+        frame = new Frame( mycards ) ;    
+        
         
         //My Code
-        settings = new Settings() ;
+        displayAddcard = new MenuCommand() ;
+        displayAddcard.setReceiver(
+                new IMenuReceiver() {
+                    /** Command Action */
+                    public void doAction() {
+                        frame.setCurrentScreen( addcard ) ;
+                    }
+              }
+              ) ;
+              
+        settings = new Settings(displayAddcard) ;
+        addcard = new AddCard() ;
 
         // setup command pattern
         displayMyCards  = new MenuCommand() ;
@@ -37,8 +51,10 @@ public class AppController implements IApp {
         displayRewards  = new MenuCommand() ;
         doStore         = new MenuCommand() ;
         
+        
         //My Code
         displaySettings = new MenuCommand() ;
+
         
         displayMyCards.setReceiver(
           new IMenuReceiver() {
@@ -85,6 +101,8 @@ public class AppController implements IApp {
                     }
               }
               ) ;
+              
+        
         
         
         frame.setMenuItem ( "A", displayMyCards ) ;
@@ -94,6 +112,7 @@ public class AppController implements IApp {
         
         //My Code
         frame.setMenuItem ( "E", displaySettings ) ;
+        
         
     }
 

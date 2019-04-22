@@ -1,23 +1,27 @@
 
 package starbucks;
 
+import java.util.* ;
+
 /**
  * Add New Card Screen
  */
 public class AddCard extends Screen
 {
-        
+    private KeyPad kp;
+   
     
     public AddCard()
     {
-        System.err.println( "Add Card Reached1" ) ;
+        kp = new KeyPad() ;
+        this.addSubComponent( kp ) ;
 
     }
     
     /**
      * 
      * 
-     */
+     
     public String display() 
     {
         System.err.println( "Add Card Reached2" ) ;
@@ -31,10 +35,9 @@ public class AddCard extends Screen
                output += " [4] [5] [6]\n" ;
                output += " [7] [8] [9]\n" ;
                output += " [_] [0] [x]" ;
-        */     
+             
 
         return output ;
-    }
-    
-
+    }    
+*/
 }
