@@ -1,0 +1,19 @@
+#BlueJ class context
+comment0.target=NineCardDigits
+comment0.text=For\ Card\ Digits\ State
+comment1.params=m
+comment1.target=NineCardDigits(ICardStateMachine)
+comment1.text=\r\n\ Constructor\r\n\ @param\ \ m\ Reference\ to\ State\ Machine\r\n
+comment2.params=
+comment2.target=void\ backspace()
+comment2.text=\r\n\ Backspace\ Event\r\n
+comment3.params=digit
+comment3.target=void\ number(java.lang.String)
+comment3.text=\r\n\ Digit\ Entry\ Event\r\n\ @param\ digit\ Digit\ Value\r\n
+comment4.params=
+comment4.target=void\ validCard()
+comment4.text=\r\n\ Valid\ Card\ Event\r\n
+comment5.params=
+comment5.target=void\ invalidCard()
+comment5.text=\r\n\ Invalid\ Card\ Event\r\n
+numComments=6
