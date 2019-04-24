@@ -15,7 +15,7 @@ public class Settings extends Screen
         addcardnow = t ;
        
         addcard = new AddCard() ;
-        addcard.addSubComponent( kp ) ;
+        //addcard.addSubComponent( kp ) ;
         
 
     }

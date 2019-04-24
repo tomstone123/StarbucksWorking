@@ -9,35 +9,27 @@ import java.util.* ;
 public class AddCard extends Screen
 {
     private KeyPad kp;
+    private CardNumber cn;
+    private Spacer sp ;
+    private CardEntryMachine cm;
    
     
     public AddCard()
     {
         kp = new KeyPad() ;
+        cn = new CardNumber();
+        sp = new Spacer() ;
+        cm = new CardEntryMachine();
+        
+        // setup the composite pattern
+        this.addSubComponent( cn );
+        this.addSubComponent( sp ) ;
         this.addSubComponent( kp ) ;
+        
+        // setup the observer pattern
+        ((IKeyPadSubject)kp).attach( cn ) ;
+        ((IKeyPadSubject)kp).attach( cm ) ;
+        ((IAddCardSubject)cm).registerObserver(this) ;
 
     }
-    
-    /**
-     * 
-     * 
-     
-    public String display() 
-    {
-        System.err.println( "Add Card Reached2" ) ;
-        
-        String output =  " Add Card Screen\n" ;
-         
-        
-        //return " [1] [2] [3]\n [4] [5] [6]\n [7] [8] [9]\n [_] [0] [X]"  ;
-        /*
-               output =  " [1] [2] [3]\n" ;
-               output += " [4] [5] [6]\n" ;
-               output += " [7] [8] [9]\n" ;
-               output += " [_] [0] [x]" ;
-             
-
-        return output ;
-    }    
-*/
 }

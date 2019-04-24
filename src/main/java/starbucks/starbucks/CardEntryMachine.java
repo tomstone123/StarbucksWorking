@@ -4,7 +4,7 @@ package starbucks;
 /**
  * Card Number Entry Machine - Context for State Pattern.
  */
-public class CardEntryMachine implements ICardStateMachine
+public class CardEntryMachine implements ICardStateMachine, IKeyPadObserver, IAddCardSubject
 {
     /**
      * Get name of current state for unit testing
@@ -17,6 +17,8 @@ public class CardEntryMachine implements ICardStateMachine
     
     // Card Domain Object
     private int cardCount=0 ;
+    private String card;
+    private IAddCardObserver auth ; // single observer 
     
     // Card machine states
     private NoCardDigits card0 ;
@@ -112,7 +114,7 @@ public class CardEntryMachine implements ICardStateMachine
         this.d7 = "" ;
         this.d8 = "" ;
         this.d9 = "" ;
-        //debug() ;
+        debug() ;
     }
     
     /**
@@ -130,7 +132,7 @@ public class CardEntryMachine implements ICardStateMachine
             this.d3 = "" ;
             this.d4 = "" ;
         }
-        //debug() ;
+        debug() ;
     }
 
     /**
@@ -147,7 +149,7 @@ public class CardEntryMachine implements ICardStateMachine
             this.d3 = "" ;
             this.d4 = "" ;
         }
-        //debug() ;
+        debug() ;
     }
 
     /**
@@ -163,7 +165,7 @@ public class CardEntryMachine implements ICardStateMachine
         else {
             this.d4 = "" ;
         }
-        //debug() ;
+        debug() ;
     }
     
     /**
@@ -179,8 +181,113 @@ public class CardEntryMachine implements ICardStateMachine
         else {
             this.d5 = "" ;
         }
-        //debug() ;
+        debug() ;
     }
     
+    /**
+     * Change the State to Five Card State
+     * @param digit Digit/Number Enterred
+     */
+    public void setStateFiveCardDigits( String digit )
+    {
+        this.cardCount = 5 ;
+        this.state = card5 ;
+        if ( digit != null )
+            this.d5 = digit ;
+        else {
+            this.d6 = "" ;
+        }
+        debug() ;
+    }
+    
+    /**
+     * Change the State to Six Card State
+     * @param digit Digit/Number Enterred
+     */
+    public void setStateSixCardDigits( String digit )
+    {
+        this.cardCount = 6 ;
+        this.state = card6 ;
+        if ( digit != null )
+            this.d6 = digit ;
+        else {
+            this.d7 = "" ;
+        }
+        debug() ;
+    }
+    
+    /**
+     * Change the State to Seven Card State
+     * @param digit Digit/Number Enterred
+     */
+    public void setStateSevenCardDigits( String digit )
+    {
+        this.cardCount = 7 ;
+        this.state = card7 ;
+        if ( digit != null )
+            this.d7 = digit ;
+        else {
+            this.d8 = "" ;
+        }
+        debug() ;
+    }
+    
+    /**
+     * Change the State to Seven Card State
+     * @param digit Digit/Number Enterred
+     */
+    public void setStateEightCardDigits( String digit )
+    {
+        this.cardCount = 8 ;
+        this.state = card8 ;
+        if ( digit != null )
+            this.d8 = digit ;
+        else {
+            this.d9 = "" ;
+        }
+        debug() ;
+    }
+    
+    /**
+     * Change the State to Nine Card State
+     * @param digit Digit/Number Enterred
+     */
+    public void setStateNineCardDigits( String digit )
+    {
+        this.cardCount = 9 ;
+        this.state = card9 ;
+        if ( digit != null )
+        {
+            this.d9 = digit ;
+            card = d1+d2+d3+d4+d5+d6+d7+d8+d9;
+            debug() ;
+            System.err.println( "Authenticating..." ) ;
+            if ( card == card )
+            {
+                System.err.println( "Card Number Entered!" ) ;
+                notifyObserver() ;
+            }
+            else
+            {
+                System.err.println( "Login Failed!" ) ;
+                setStateNoCardDigits() ;
+            }
+        }
+    }
+    
+    /** Debug Dump to Stderr State Machine Changes */
+    private void debug()
+    {
+        System.err.println( "Current State: " + state.getClass().getName() ) ;
+        System.err.println( "D1 = " + d1 ) ;
+        System.err.println( "D2 = " + d2 ) ;
+        System.err.println( "D3 = " + d3 ) ;
+        System.err.println( "D4 = " + d4 ) ;
+        System.err.println( "D5 = " + d5 ) ;
+        System.err.println( "D6 = " + d6 ) ;
+        System.err.println( "D7 = " + d7 ) ;
+        System.err.println( "D8 = " + d8 ) ;
+        System.err.println( "D9 = " + d9 ) ;
+    }
 
 }
