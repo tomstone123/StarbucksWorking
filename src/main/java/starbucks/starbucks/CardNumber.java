@@ -8,6 +8,7 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
 {
     ITouchEventHandler nextHandler ;
     private int count = 0;
+    private String enteredCardNumber = "" ;
     
     /**
      * Touch Event Ignored by Passcode
@@ -43,9 +44,12 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
      */
     public String display() 
     {
-        String value = "" ;
+        String value = "[" + enteredCardNumber + "]" ;
+        
+        /*
         switch ( count )
         {
+            
             case 0: value = "[]" ; break ;
             case 1: value = "[*]" ; break ;
             case 2: value = "[**]" ; break ;
@@ -58,8 +62,14 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
             case 9: value = "[*********]" ; break ;
         }
         System.err.println( value );
-        
+        */
+       
         return value ;
+        
+        
+       
+       
+       
     }
     
     /**
@@ -80,6 +90,7 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
     {
         System.err.println( "Key: " + key ) ;
         count = c ;
+        enteredCardNumber += key ;
     }
 
 
