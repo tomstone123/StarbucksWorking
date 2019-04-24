@@ -6,8 +6,10 @@ import java.util.* ;
 /**
  * Add New Card Screen
  */
-public class AddCard extends Screen
+public class AddCard extends Screen implements IAddCardObserver
 {
+    
+    
     private KeyPad kp;
     private CardNumber cn;
     private Spacer sp ;
@@ -16,6 +18,7 @@ public class AddCard extends Screen
     
     public AddCard()
     {
+        
         kp = new KeyPad() ;
         cn = new CardNumber();
         sp = new Spacer() ;
@@ -30,6 +33,14 @@ public class AddCard extends Screen
         ((IKeyPadSubject)kp).attach( cn ) ;
         ((IKeyPadSubject)kp).attach( cm ) ;
         ((IAddCardSubject)cm).registerObserver(this) ;
+        
 
+    }
+    
+    
+    //Not used
+    public void correctCardNumber()
+    {
+        
     }
 }

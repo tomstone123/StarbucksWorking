@@ -6,5 +6,5 @@ package starbucks ;
 public interface IAddCardObserver
 {
     /** Auth Event */
-    void authEvent() ;
+    void correctCardNumber() ;
 }

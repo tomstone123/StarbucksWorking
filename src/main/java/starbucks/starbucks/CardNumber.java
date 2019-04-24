@@ -16,9 +16,9 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
      */
     public void touch(int x, int y) 
     {
-        if ( y==2 )
+        if ( y < 5 )
         {
-            System.err.println( "Passcode Touched at (" + x + ", " + y + ")" ) ; 
+            System.err.println( "Keypad Touched at (" + x + ", " + y + ")" ) ; 
         }
         else
         {
@@ -46,18 +46,20 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
         String value = "" ;
         switch ( count )
         {
-            case 0: value = " []" ; break ;
-            case 1: value = " [*]" ; break ;
-            case 2: value = " [**]" ; break ;
-            case 3: value = " [***]" ; break ;
-            case 4: value = " [****]" ; break ;
-            case 5: value = " [*****]" ; break ;
-            case 6: value = " [******]" ; break ;
-            case 7: value = " [*******]" ; break ;
-            case 8: value = " [********]" ; break ;
-            case 9: value = " [*********]" ; break ;
+            case 0: value = "[]" ; break ;
+            case 1: value = "[*]" ; break ;
+            case 2: value = "[**]" ; break ;
+            case 3: value = "[***]" ; break ;
+            case 4: value = "[****]" ; break ;
+            case 5: value = "[*****]" ; break ;
+            case 6: value = "[******]" ; break ;
+            case 7: value = "[*******]" ; break ;
+            case 8: value = "[********]" ; break ;
+            case 9: value = "[*********]" ; break ;
         }
-         return value  ;
+        System.err.println( value );
+        
+        return value ;
     }
     
     /**

@@ -8,8 +8,8 @@ package starbucks ;
 public class AppAuthProxy implements IApp, IPinAuthObserver {
     
     private IApp app = new AppController() ;
-    private KeyPad kp;
-    private Passcode pc;
+    private KeyPad kp ;
+    private Passcode pc ;
     private PinScreen ps ;
     private Spacer sp ;
     private boolean authenticated = false ;

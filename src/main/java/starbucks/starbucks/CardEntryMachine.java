@@ -9,11 +9,12 @@ public class CardEntryMachine implements ICardStateMachine, IKeyPadObserver, IAd
     /**
      * Get name of current state for unit testing
      * @return Class Name of Current State
-     *
+     */
+    
     public String getCurrentState()
     {
         return state.getClass().getName() ;
-    }*/
+    }
     
     // Card Domain Object
     private int cardCount=0 ;
@@ -131,6 +132,11 @@ public class CardEntryMachine implements ICardStateMachine, IKeyPadObserver, IAd
             this.d2 = "" ;
             this.d3 = "" ;
             this.d4 = "" ;
+            this.d5 = "" ;
+            this.d6 = "" ;
+            this.d7 = "" ;
+            this.d8 = "" ;
+            this.d9 = "" ;    
         }
         debug() ;
     }
@@ -148,6 +154,11 @@ public class CardEntryMachine implements ICardStateMachine, IKeyPadObserver, IAd
         else {
             this.d3 = "" ;
             this.d4 = "" ;
+            this.d5 = "" ;
+            this.d6 = "" ;
+            this.d7 = "" ;
+            this.d8 = "" ;
+            this.d9 = "" ; 
         }
         debug() ;
     }
@@ -164,6 +175,11 @@ public class CardEntryMachine implements ICardStateMachine, IKeyPadObserver, IAd
             this.d3 = digit ;
         else {
             this.d4 = "" ;
+            this.d5 = "" ;
+            this.d6 = "" ;
+            this.d7 = "" ;
+            this.d8 = "" ;
+            this.d9 = "" ; 
         }
         debug() ;
     }
@@ -180,6 +196,10 @@ public class CardEntryMachine implements ICardStateMachine, IKeyPadObserver, IAd
             this.d4 = digit ;
         else {
             this.d5 = "" ;
+            this.d6 = "" ;
+            this.d7 = "" ;
+            this.d8 = "" ;
+            this.d9 = "" ; 
         }
         debug() ;
     }
@@ -196,6 +216,9 @@ public class CardEntryMachine implements ICardStateMachine, IKeyPadObserver, IAd
             this.d5 = digit ;
         else {
             this.d6 = "" ;
+            this.d7 = "" ;
+            this.d8 = "" ;
+            this.d9 = "" ; 
         }
         debug() ;
     }
@@ -212,6 +235,8 @@ public class CardEntryMachine implements ICardStateMachine, IKeyPadObserver, IAd
             this.d6 = digit ;
         else {
             this.d7 = "" ;
+            this.d8 = "" ;
+            this.d9 = "" ; 
         }
         debug() ;
     }
@@ -228,6 +253,7 @@ public class CardEntryMachine implements ICardStateMachine, IKeyPadObserver, IAd
             this.d7 = digit ;
         else {
             this.d8 = "" ;
+            this.d9 = "" ; 
         }
         debug() ;
     }
@@ -274,6 +300,50 @@ public class CardEntryMachine implements ICardStateMachine, IKeyPadObserver, IAd
             }
         }
     }
+    
+    /**
+     * Observer of Key Events
+     * @param c   Num Keys So Far
+     * @param key Last Key Enterred
+     */
+    public void keyEventUpdate( int c, String key ) 
+    {
+        System.err.println( "Key: " + key + " Count: " + c ) ;
+        if ( key.equals(" ") )
+        /* nothing */ ;
+        else if ( key.equals("X") )
+            backspace() ;
+        else
+            number( key ) ;        
+    }    
+
+    /**
+     * Register Observers for Pin Authentication
+     * @param obj Object Observing Pin Auth
+     */
+    public void registerObserver( IAddCardObserver obj ) 
+    {
+        this.auth = obj ;
+    }
+
+    /**
+     * Remove Card Auth Observer
+     * @param obj Object No Longer Observing Pin Auth
+     */
+    public void removeObserver( IAddCardObserver obj ) 
+    {
+        this.auth = null ;
+    }
+
+    /**
+     * Notify Pin Auth Observers
+     */
+    public void notifyObserver( ) 
+    {
+        if ( this.auth != null )
+            this.auth.correctCardNumber() ;
+    }
+
     
     /** Debug Dump to Stderr State Machine Changes */
     private void debug()
