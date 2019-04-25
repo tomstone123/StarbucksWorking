@@ -12,10 +12,9 @@ public class AddCard extends Screen implements IAddCardObserver
     
     private KeyPad kp;
     private CardNumber cn;
+    private CID cid;
     private Spacer sp ;
     private CardEntryMachine cm;
-    private CID cid;
-    private CIDMachine cidm;
    
     
     public AddCard()
@@ -26,14 +25,15 @@ public class AddCard extends Screen implements IAddCardObserver
         sp = new Spacer() ;
         cm = new CardEntryMachine();
         cid = new CID();
-        cidm = new CIDMachine();
+        //cidm = new CIDMachine();
         
-        cn.setNext(cid);
-        cid.setNext(cn);
+        //cn.setNext(cid);
+        //cid.setNext(cn);
         
         
         // setup the composite pattern
-        this.addSubComponent( cn );
+        this.addSubComponent( cn ) ;
+        this.addSubComponent( cid ) ;
         this.addSubComponent( sp ) ;
         this.addSubComponent( kp ) ;
         

@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=CID
+comment0.text=My\ Card\ Options\ Screen
+comment1.params=
+comment1.target=CID()
+comment2.params=
+comment2.target=java.lang.String\ display()
+comment3.params=c
+comment3.target=void\ addSubComponent(IDisplayComponent)
+comment3.text=\r\n\ Add\ Sub\ Component\ (Not\ used)\r\n\ @param\ c\ Sub\ Component\ to\ Add\r\n
+numComments=4
