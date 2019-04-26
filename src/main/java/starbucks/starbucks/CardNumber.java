@@ -47,7 +47,6 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
         String value = "[" + enteredCardNumber + "]" ;
 
         return value ;
-        
 
     }
     
@@ -69,7 +68,10 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
     {
         System.err.println( "Key: " + key ) ;
         count = c ;
-        enteredCardNumber += key ;
+        if ( count < 10 )
+        {
+            enteredCardNumber += key ;
+        } 
     }
 
 

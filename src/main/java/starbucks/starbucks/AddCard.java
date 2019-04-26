@@ -8,13 +8,14 @@ import java.util.* ;
  */
 public class AddCard extends Screen implements IAddCardObserver
 {
-    
+    private String enteredCID = "";
     
     private KeyPad kp;
     private CardNumber cn;
     private CID cid;
     private Spacer sp ;
     private CardEntryMachine cm;
+    private CIDEntryMachine cidm;
    
     
     public AddCard()
@@ -25,10 +26,10 @@ public class AddCard extends Screen implements IAddCardObserver
         sp = new Spacer() ;
         cm = new CardEntryMachine();
         cid = new CID();
-        //cidm = new CIDMachine();
+        cidm = new CIDEntryMachine();
         
-        //cn.setNext(cid);
-        //cid.setNext(cn);
+        cn.setNext(cid);
+        cid.setNext(cn);
         
         
         // setup the composite pattern
@@ -42,6 +43,9 @@ public class AddCard extends Screen implements IAddCardObserver
         ((IKeyPadSubject)kp).attach( cm ) ;
         ((IAddCardSubject)cm).registerObserver(this) ;
         
+        ((IKeyPadSubject)kp).attach( cid ) ;
+        ((IKeyPadSubject)kp).attach( cidm ) ;
+        ((IAddCardSubject)cidm).registerObserver(this) ;
 
     }
     
@@ -50,4 +54,5 @@ public class AddCard extends Screen implements IAddCardObserver
     {
         
     }
+
 }

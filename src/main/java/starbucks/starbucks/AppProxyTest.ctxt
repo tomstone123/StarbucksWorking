@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=AppProxyTest
+comment1.params=
+comment1.target=AppProxyTest()
+comment1.text=\r\n\ Default\ constructor\ for\ test\ class\ ProxyPatternTest\r\n
+comment2.params=
+comment2.target=void\ setUp()
+comment2.text=\r\n\ Sets\ up\ the\ test\ fixture.\r\n\r\n\ Called\ before\ every\ test\ case\ method.\r\n
+comment3.params=
+comment3.target=void\ ProxyPatternTest1()
+comment4.params=
+comment4.target=void\ ProxyPatternTest2()
+comment5.params=
+comment5.target=void\ CommandPatternTest1()
+comment6.params=
+comment6.target=void\ CommandPatternTest2()
+comment7.params=
+comment7.target=void\ CommandPatternTest3()
+comment8.params=
+comment8.target=void\ CommandPatternTest4()
+comment9.params=
+comment9.target=void\ tearDown()
+comment9.text=\r\n\ Tears\ down\ the\ test\ fixture.\r\n\r\n\ Called\ after\ every\ test\ case\ method.\r\n
+numComments=10

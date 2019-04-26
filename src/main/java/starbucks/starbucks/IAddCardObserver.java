@@ -2,7 +2,7 @@
 
 package starbucks ;
 
-/** Pin Auth Observer Interface */
+/** Card Number Observer Interface */
 public interface IAddCardObserver
 {
     /** Auth Event */
