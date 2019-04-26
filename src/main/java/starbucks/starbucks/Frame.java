@@ -16,6 +16,9 @@ public class Frame implements IFrame
     private IOrientationStrategy portraitStrategy ;
     private IOrientationStrategy landscapeStrategy ;
     private IOrientationStrategy currentStrategy ;
+    
+    private IScreen previous ;
+    private IScreen next ;
 
     /**
      * Return Screen Name
@@ -31,14 +34,19 @@ public class Frame implements IFrame
 
     /** Nav to Previous Screen */
     public void previousScreen() {
-        // add code here
+        if ( previous != null )
+        {
+            currentStrategy.display( previous ) ;
+        }
         
     }
 
     /** Nav to Next Screen */
     public void nextScreen() {
-        // add code here
-        
+        if ( next != null )
+        {
+            currentStrategy.display( next ) ;
+        }
     }
 
 

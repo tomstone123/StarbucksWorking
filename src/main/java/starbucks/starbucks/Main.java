@@ -71,6 +71,20 @@ final class Main {
                 app.touch(2,5) ;  // 2
                 app.touch(3,5) ;  // 3
                 app.touch(1,6) ;  // 4
+            } else if ( cmd.startsWith("card") ) {
+                app.touch(1,5) ;  // 1
+                app.touch(2,5) ;  // 2
+                app.touch(3,5) ;  // 3
+                app.touch(1,6) ;  // 4
+                app.touch(2,6) ; // 5
+                app.touch(3,6) ; // 6
+                app.touch(1,7) ; // 7
+                app.touch(2,7) ; // 8
+                app.touch(3,7) ; // 9
+            } else if ( cmd.startsWith("cid") ) {
+                app.touch(1,5) ;  // 1
+                app.touch(2,5) ;  // 2
+                app.touch(3,5) ;  // 3
             } else {
                 msg = "" ;  
             }

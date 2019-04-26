@@ -16,6 +16,10 @@ public class AddCard extends Screen implements IAddCardObserver
     private Spacer sp ;
     private CardEntryMachine cm;
     private CIDEntryMachine cidm;
+    private Frame frame;
+    
+    private IScreen mycards ;
+    private String MyCards = "MyCards" ;
    
     
     public AddCard()
@@ -28,10 +32,9 @@ public class AddCard extends Screen implements IAddCardObserver
         cid = new CID();
         cidm = new CIDEntryMachine();
         
-        cn.setNext(cid);
-        cid.setNext(cn);
+        mycards = new MyCards() ;
         
-        
+
         // setup the composite pattern
         this.addSubComponent( cn ) ;
         this.addSubComponent( cid ) ;
@@ -46,8 +49,28 @@ public class AddCard extends Screen implements IAddCardObserver
         ((IKeyPadSubject)kp).attach( cid ) ;
         ((IKeyPadSubject)kp).attach( cidm ) ;
         ((IAddCardSubject)cidm).registerObserver(this) ;
+        
+        setNext( mycards, MyCards );
 
     }
+    
+    /**
+     * Set Next Screen - Not Used 
+     * @param s Next Screen Object
+     * @param n Next Screen Label
+     */
+    public void setNext(IScreen s, String n )  {
+        frame.nextScreen();
+    }
+    
+    /**
+     * Send Previous Screen - Not Used
+     * @param s Previous Screen Object
+     * @param n Previous Screen Label
+     */
+    public void setPrev(IScreen s, String n )  {
+        // add code here
+    }  
     
     //Not used
     public void correctCardNumber()

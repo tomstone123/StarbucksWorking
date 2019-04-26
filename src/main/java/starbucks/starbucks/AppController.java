@@ -38,6 +38,7 @@ public class AppController implements IApp {
                     /** Command Action */
                     public void doAction() {
                         frame.setCurrentScreen( addcard ) ;
+                        
                     }
               }
               ) ;
