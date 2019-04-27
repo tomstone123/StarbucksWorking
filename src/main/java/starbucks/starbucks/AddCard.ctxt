@@ -1,14 +1,8 @@
 #BlueJ class context
 comment0.target=AddCard
 comment0.text=\r\n\ Add\ New\ Card\ Screen\r\n
-comment1.params=
-comment1.target=AddCard()
-comment2.params=s\ n
-comment2.target=void\ setNext(IScreen,\ java.lang.String)
-comment2.text=\r\n\ Set\ Next\ Screen\ -\ Not\ Used\ \r\n\ @param\ s\ Next\ Screen\ Object\r\n\ @param\ n\ Next\ Screen\ Label\r\n
-comment3.params=s\ n
-comment3.target=void\ setPrev(IScreen,\ java.lang.String)
-comment3.text=\r\n\ Send\ Previous\ Screen\ -\ Not\ Used\r\n\ @param\ s\ Previous\ Screen\ Object\r\n\ @param\ n\ Previous\ Screen\ Label\r\n
-comment4.params=
-comment4.target=void\ correctCardNumber()
-numComments=5
+comment1.params=mycards
+comment1.target=AddCard(IScreen)
+comment2.params=
+comment2.target=void\ correctCardNumber()
+numComments=3

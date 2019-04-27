@@ -34,19 +34,16 @@ public class Frame implements IFrame
 
     /** Nav to Previous Screen */
     public void previousScreen() {
-        if ( previous != null )
-        {
-            currentStrategy.display( previous ) ;
-        }
-        
+        System.out.println("Previous Screen Called.");
+        current.prev();
+       
     }
 
     /** Nav to Next Screen */
     public void nextScreen() {
-        if ( next != null )
-        {
-            currentStrategy.display( next ) ;
-        }
+        System.out.println("Next Screen Called.");
+        current = current.next2();
+
     }
 
 

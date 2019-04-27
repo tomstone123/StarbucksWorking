@@ -44,7 +44,7 @@ public class AppController implements IApp {
               ) ;
               
         settings = new Settings(displayAddcard) ;
-        addcard = new AddCard() ;
+        addcard = new AddCard( mycards ) ;
 
         // setup command pattern
         displayMyCards  = new MenuCommand() ;

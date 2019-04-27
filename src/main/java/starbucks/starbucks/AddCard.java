@@ -18,11 +18,13 @@ public class AddCard extends Screen implements IAddCardObserver
     private CIDEntryMachine cidm;
     private Frame frame;
     
-    private IScreen mycards ;
+    //private IScreen mycards ;
     private String MyCards = "MyCards" ;
+    private IScreen current;
+    
    
     
-    public AddCard()
+    public AddCard(IScreen mycards)
     {
         
         kp = new KeyPad() ;
@@ -50,27 +52,24 @@ public class AddCard extends Screen implements IAddCardObserver
         ((IKeyPadSubject)kp).attach( cidm ) ;
         ((IAddCardSubject)cidm).registerObserver(this) ;
         
-        setNext( mycards, MyCards );
+        this.setNext(mycards, MyCards);
+        next2(mycards);
+        
+    	
 
     }
     
-    /**
-     * Set Next Screen - Not Used 
-     * @param s Next Screen Object
-     * @param n Next Screen Label
-     */
-    public void setNext(IScreen s, String n )  {
-        frame.nextScreen();
+    
+    
+    public IScreen next2(IScreen s)
+    {
+    	return current;
     }
     
-    /**
-     * Send Previous Screen - Not Used
-     * @param s Previous Screen Object
-     * @param n Previous Screen Label
-     */
-    public void setPrev(IScreen s, String n )  {
-        // add code here
-    }  
+    public void setNext(IScreen s, String n )  {
+        current = s;
+    }
+    
     
     //Not used
     public void correctCardNumber()
