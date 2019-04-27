@@ -21,10 +21,11 @@ public class AddCard extends Screen implements IAddCardObserver
     //private IScreen mycards ;
     private String MyCards = "MyCards" ;
     private IScreen current;
+    private IMenuCommand mycardnext ;
     
    
     
-    public AddCard(IScreen mycards)
+    public AddCard(IMenuCommand displayMyCards)
     {
         
         kp = new KeyPad() ;
@@ -33,8 +34,8 @@ public class AddCard extends Screen implements IAddCardObserver
         cm = new CardEntryMachine();
         cid = new CID();
         cidm = new CIDEntryMachine();
+        mycardnext = displayMyCards;
         
-        mycards = new MyCards() ;
         
 
         // setup the composite pattern
@@ -52,8 +53,7 @@ public class AddCard extends Screen implements IAddCardObserver
         ((IKeyPadSubject)kp).attach( cidm ) ;
         ((IAddCardSubject)cidm).registerObserver(this) ;
         
-        this.setNext(mycards, MyCards);
-        next2(mycards);
+
         
     	
 
@@ -66,10 +66,19 @@ public class AddCard extends Screen implements IAddCardObserver
     	return current;
     }
     
-    public void setNext(IScreen s, String n )  {
-        current = s;
+    public void setNext(IMenuCommand s)  {
+        mycardnext = s;
     }
     
+    public void settingOptions(IMenuCommand s) {
+        mycardnext = s ;
+    }
+    
+    @Override
+    public void next()
+    {
+    	mycardnext.execute();
+    }
     
     //Not used
     public void correctCardNumber()

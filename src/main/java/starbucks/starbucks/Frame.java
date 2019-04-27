@@ -42,7 +42,6 @@ public class Frame implements IFrame
     /** Nav to Next Screen */
     public void nextScreen() {
         System.out.println("Next Screen Called.");
-        current = current.next2();
 
     }
 

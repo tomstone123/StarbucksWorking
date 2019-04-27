@@ -28,7 +28,18 @@ public class AppController implements IApp {
         store = new Store() ;
         rewards = new Rewards() ;
         payments = new Payments() ;
-        frame = new Frame( mycards ) ;    
+        frame = new Frame( mycards ) ;
+        
+
+        // setup command pattern
+        displayMyCards  = new MenuCommand() ;
+        displayPayments = new MenuCommand() ;
+        displayRewards  = new MenuCommand() ;
+        doStore         = new MenuCommand() ;
+        
+        
+        //My Code
+        displaySettings = new MenuCommand() ;
         
         
         //My Code
@@ -44,17 +55,8 @@ public class AppController implements IApp {
               ) ;
               
         settings = new Settings(displayAddcard) ;
-        addcard = new AddCard( mycards ) ;
+        addcard = new AddCard(displayMyCards) ;
 
-        // setup command pattern
-        displayMyCards  = new MenuCommand() ;
-        displayPayments = new MenuCommand() ;
-        displayRewards  = new MenuCommand() ;
-        doStore         = new MenuCommand() ;
-        
-        
-        //My Code
-        displaySettings = new MenuCommand() ;
 
         
         displayMyCards.setReceiver(

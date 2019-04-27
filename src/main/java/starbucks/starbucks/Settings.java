@@ -14,7 +14,7 @@ public class Settings extends Screen
     public Settings(IMenuCommand t){
         addcardnow = t ;
        
-        addcard = new AddCard(addcard) ;
+        addcard = new AddCard(null) ;
         //addcard.addSubComponent( kp ) ;
         
 
