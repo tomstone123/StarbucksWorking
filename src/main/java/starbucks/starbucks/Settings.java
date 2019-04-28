@@ -45,15 +45,7 @@ public class Settings extends Screen
             {
                 addcardnow.execute();
             }
-        }
-        
-    }
-    
-    /*
-     * To be used in the future
-     */
-    public void settingOptions(IMenuCommand s) {
-        addcardnow = s ;
-    }
+        }    
+    }    
     
 }

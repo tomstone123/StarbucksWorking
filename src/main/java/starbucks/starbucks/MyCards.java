@@ -47,12 +47,9 @@ public class MyCards extends Screen
      */
     public void touch(int x, int y) 
     {
-        if ( y == 3)
+        if ( y == 3 && x == 3)
         {
-            if( x == 3 )
-            {
-                mycardspaynow.execute();
-            }
+        	mycardspaynow.execute();
         }      
     }
    
