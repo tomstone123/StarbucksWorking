@@ -25,6 +25,7 @@ public class MyCards extends Screen
     	cardValue = String.format("%.2f", cashValue);
     	
     	mycardspaynow = t ;
+    	new MyCardsPay();
        
     }
     

@@ -122,12 +122,10 @@ public class AppController implements IApp {
         frame.setMenuItem ( "A", displayMyCards ) ;
         frame.setMenuItem ( "B", displayPayments ) ;
         frame.setMenuItem ( "C", displayRewards ) ;
-        frame.setMenuItem ( "D", doStore ) ;
-        
+        frame.setMenuItem ( "D", doStore ) ;        
         //My Code
         frame.setMenuItem ( "E", displaySettings ) ;
-        
-        
+                
     }
 
 
