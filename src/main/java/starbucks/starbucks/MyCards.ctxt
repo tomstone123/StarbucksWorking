@@ -9,4 +9,6 @@ comment2.text=\r\n\ Pint\ out\ My\ Card\ Screen\r\n\ @return\ Key\ Pad\ View\ Co
 comment3.params=x\ y
 comment3.target=void\ touch(int,\ int)
 comment3.text=\r\n\ Switch\ to\ the\ MyCardPay\ Screen\r\n
-numComments=4
+comment4.params=s
+comment4.target=void\ updateMenuCommand(IMenuCommand)
+numComments=5

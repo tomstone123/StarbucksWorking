@@ -24,10 +24,35 @@ public class AppController implements IApp {
     private IMenuCommand displayAddcard ;
     private IScreen mycardspay ;
     private IMenuCommand displayMyCardsPay ;
+    private IScreen moreoptions ;
+    private IMenuCommand displayMoreOptions ;
 
     public AppController() {
     	
-    	mycards = new MyCards(displayMyCardsPay) ;
+        
+        displayMyCardsPay = new MenuCommand() ;
+        displayMyCardsPay.setReceiver(
+                new IMenuReceiver() {
+                    /** Command Action */
+                    public void doAction() {
+                        frame.setCurrentScreen( mycardspay ) ;
+                        
+                    }
+              }
+              ) ;
+        
+        displayMoreOptions = new MenuCommand() ;
+        displayMoreOptions.setReceiver(
+                new IMenuReceiver() {
+                    /** Command Action */
+                    public void doAction() {
+                        frame.setCurrentScreen( moreoptions ) ;
+                        
+                    }
+              }
+              ) ;
+    	
+    	mycards = new MyCards(displayMyCardsPay, displayMoreOptions) ;
         store = new Store() ;
         rewards = new Rewards() ;
         payments = new Payments() ;
@@ -48,29 +73,16 @@ public class AppController implements IApp {
                 new IMenuReceiver() {
                     /** Command Action */
                     public void doAction() {
-                        frame.setCurrentScreen( addcard ) ;
-                        
+                        frame.setCurrentScreen( addcard ) ;                        
                     }
               }
               ) ;
-        
-        displayMyCardsPay = new MenuCommand() ;
-        displayMyCardsPay.setReceiver(
-                new IMenuReceiver() {
-                    /** Command Action */
-                    public void doAction() {
-                        frame.setCurrentScreen( mycardspay ) ;
-                        
-                    }
-              }
-              ) ;
+
               
         settings = new Settings(displayAddcard) ;
         addcard = new AddCard(displayMyCards, displaySettings) ;
         mycardspay = new MyCardsPay(displayMyCards);
-        MyCards(displayMyCardsPay) ;
-
-
+        
         
         displayMyCards.setReceiver(
           new IMenuReceiver() {
@@ -131,13 +143,7 @@ public class AppController implements IApp {
     }
 
 
-    private void MyCards(IMenuCommand displayMyCardsPay2) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-	/**
+    /**
       * Switch to Landscape Mode
       */
     public void landscape() {
