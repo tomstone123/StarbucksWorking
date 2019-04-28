@@ -12,8 +12,6 @@ public class MyCards extends Screen
 	
 	private IMenuCommand mycardspaynow;    
 
-        
-	
 	private CardInfo cardInfo;
 	private double cashValue = 0.00;
 	private String cardValue = "";
@@ -25,7 +23,7 @@ public class MyCards extends Screen
     	cardValue = String.format("%.2f", cashValue);
     	
     	mycardspaynow = t ;
-    	new MyCardsPay();
+    	new MyCardsPay(null);
        
     }
     

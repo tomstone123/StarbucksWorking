@@ -26,7 +26,8 @@ public class AppController implements IApp {
     private IMenuCommand displayMyCardsPay ;
 
     public AppController() {
-        mycards = new MyCards(displayMyCardsPay) ;
+    	
+    	mycards = new MyCards(displayMyCardsPay) ;
         store = new Store() ;
         rewards = new Rewards() ;
         payments = new Payments() ;
@@ -66,7 +67,8 @@ public class AppController implements IApp {
               
         settings = new Settings(displayAddcard) ;
         addcard = new AddCard(displayMyCards, displaySettings) ;
-        mycardspay = new MyCardsPay();
+        mycardspay = new MyCardsPay(displayMyCards);
+        MyCards(displayMyCardsPay) ;
 
 
         
@@ -129,7 +131,13 @@ public class AppController implements IApp {
     }
 
 
-    /**
+    private void MyCards(IMenuCommand displayMyCardsPay2) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	/**
       * Switch to Landscape Mode
       */
     public void landscape() {

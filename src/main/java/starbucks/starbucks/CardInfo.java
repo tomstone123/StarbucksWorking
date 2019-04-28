@@ -9,8 +9,8 @@ public class CardInfo
 
 	private static CardInfo instance = null ;
 	
-	private String cardNumber = "" ;
-	private String cid = "" ;
+	private String cardNumber = "000000000" ;
+	private String cid = "000" ;
 	private double cashAmount = 0;
 
     public CardInfo()

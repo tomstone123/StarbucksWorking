@@ -82,7 +82,7 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
         
         if (count == 9)
         {
-    		cardInfo.setCID(enteredCardNumber);
+    		cardInfo.setCardNumber(enteredCardNumber);
         }
     }
 
