@@ -5,18 +5,13 @@ package starbucks;
 /** Settings Screen */
 public class Settings extends Screen
 {
-    private AddCard addcard ;
-    private IFrame frame ;
+
     private IMenuCommand addcardnow ;
-        
-    private KeyPad kp;
     
     public Settings(IMenuCommand t){
         addcardnow = t ;
        
-        addcard = new AddCard(null) ;
-        //addcard.addSubComponent( kp ) ;
-        
+        new AddCard(null, null);        
 
     }
 

@@ -1,31 +1,25 @@
 
 package starbucks;
 
-import java.util.* ;
-
 /**
  * Add New Card Screen
  */
 public class AddCard extends Screen implements IAddCardObserver
-{
-    private String enteredCID = "";
-    
+{    
     private KeyPad kp;
     private CardNumber cn;
     private CID cid;
     private Spacer sp ;
     private CardEntryMachine cm;
     private CIDEntryMachine cidm;
-    private Frame frame;
     
     //private IScreen mycards ;
-    private String MyCards = "MyCards" ;
-    private IScreen current;
     private IMenuCommand mycardnext ;
+    private IMenuCommand settingsprev;
     
    
     
-    public AddCard(IMenuCommand displayMyCards)
+    public AddCard(IMenuCommand displayMyCards, IMenuCommand displaySettings)
     {
         
         kp = new KeyPad() ;
@@ -35,6 +29,7 @@ public class AddCard extends Screen implements IAddCardObserver
         cid = new CID();
         cidm = new CIDEntryMachine();
         mycardnext = displayMyCards;
+        settingsprev = displaySettings;
         
         
 
@@ -52,27 +47,19 @@ public class AddCard extends Screen implements IAddCardObserver
         ((IKeyPadSubject)kp).attach( cid ) ;
         ((IKeyPadSubject)kp).attach( cidm ) ;
         ((IAddCardSubject)cidm).registerObserver(this) ;
-        
-
-        
-    	
+         	
 
     }
-    
-    
-    
-    public IScreen next2(IScreen s)
-    {
-    	return current;
-    }
+
     
     public void setNext(IMenuCommand s)  {
         mycardnext = s;
     }
     
-    public void settingOptions(IMenuCommand s) {
-        mycardnext = s ;
+    public void setPrev(IMenuCommand t)  {
+        settingsprev = t;
     }
+     
     
     @Override
     public void next()
@@ -80,10 +67,20 @@ public class AddCard extends Screen implements IAddCardObserver
     	mycardnext.execute();
     }
     
-    //Not used
-    public void correctCardNumber()
+    @Override
+    public void prev()
     {
-        
+    	settingsprev.execute();
+    	
     }
+
+	public void correctCardNumber() {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+    
+
 
 }

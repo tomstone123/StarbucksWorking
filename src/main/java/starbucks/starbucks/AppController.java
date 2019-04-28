@@ -36,9 +36,6 @@ public class AppController implements IApp {
         displayPayments = new MenuCommand() ;
         displayRewards  = new MenuCommand() ;
         doStore         = new MenuCommand() ;
-        
-        
-        //My Code
         displaySettings = new MenuCommand() ;
         
         
@@ -55,7 +52,7 @@ public class AppController implements IApp {
               ) ;
               
         settings = new Settings(displayAddcard) ;
-        addcard = new AddCard(displayMyCards) ;
+        addcard = new AddCard(displayMyCards, displaySettings) ;
 
 
         

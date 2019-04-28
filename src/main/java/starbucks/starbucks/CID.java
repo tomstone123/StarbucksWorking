@@ -8,12 +8,20 @@ public class CID implements ITouchEventHandler, IDisplayComponent, IKeyPadObserv
     ITouchEventHandler nextHandler ;
     private int count = 0;
     private String enteredCID = "" ;
+    private CardInfo cardInfo;
+    private double newCardValue = 20.00;
     
     /**
      * Touch Event Ignored by Passcode
      * @param x Touch X
      * @param y Touch Y
      */
+    
+    public CID()
+    { 
+        cardInfo = new CardInfo();
+    }
+    
     public void touch(int x, int y) 
     {
         if ( y < 5 )
@@ -36,10 +44,7 @@ public class CID implements ITouchEventHandler, IDisplayComponent, IKeyPadObserv
         nextHandler = next ;
     }
     
-    public CID()
-    {
-       
-    }
+
     
     public String display() 
     {
@@ -67,10 +72,17 @@ public class CID implements ITouchEventHandler, IDisplayComponent, IKeyPadObserv
     {
         System.err.println( "Key: " + key ) ;
         count = c ;
-        if ( count > 9 && count < 13 )
+        if ( count > 9 && count <= 12 )
         {
-            enteredCID += key ;
+            enteredCID += key ;         
+
         }
+        
+        if (count == 12)
+            {
+            	cardInfo.setCashAmount(newCardValue);
+            	System.err.println("updating new card cash value");
+            }
     }
 
    

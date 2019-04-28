@@ -1,14 +1,14 @@
 #BlueJ class context
 comment0.target=CID
 comment0.text=My\ Card\ Options\ Screen
-comment1.params=x\ y
-comment1.target=void\ touch(int,\ int)
+comment1.params=
+comment1.target=CID()
 comment1.text=\r\n\ Touch\ Event\ Ignored\ by\ Passcode\r\n\ @param\ x\ Touch\ X\r\n\ @param\ y\ Touch\ Y\r\n
-comment2.params=next
-comment2.target=void\ setNext(ITouchEventHandler)
-comment2.text=\r\n\ Set\ Next\ Touch\ Handler\r\n\ @param\ next\ Touch\ Event\ Handler\r\n
-comment3.params=
-comment3.target=CID()
+comment2.params=x\ y
+comment2.target=void\ touch(int,\ int)
+comment3.params=next
+comment3.target=void\ setNext(ITouchEventHandler)
+comment3.text=\r\n\ Set\ Next\ Touch\ Handler\r\n\ @param\ next\ Touch\ Event\ Handler\r\n
 comment4.params=
 comment4.target=java.lang.String\ display()
 comment5.params=c
