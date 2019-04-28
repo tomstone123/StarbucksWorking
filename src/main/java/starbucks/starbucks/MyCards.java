@@ -11,7 +11,7 @@ public class MyCards extends Screen
 	DecimalFormat df = new DecimalFormat("##.##");
 	
 	private IMenuCommand mycardspaynow;
-	private IMenuCommand moreoptionsnow;
+	private IMenuCommand mycardsoptionsnow;
 
 	private CardInfo cardInfo;
 	private double cashValue = 0.00;
@@ -24,9 +24,10 @@ public class MyCards extends Screen
     	cardValue = String.format("%.2f", cashValue);
     	
     	mycardspaynow = t ;
-    	moreoptionsnow = u ;
+    	mycardsoptionsnow = u ;
     	
-    	new MyCardsPay( mycardspaynow );
+//    	new MyCardsPay( mycardspaynow );
+//    	new MyCardsOptions();
        
     }
     
@@ -55,14 +56,9 @@ public class MyCards extends Screen
         
         if ( x == 2 && y == 4)
         {
-        	moreoptionsnow.execute();
+        	mycardsoptionsnow.execute();
         }
     }
     
-    public void updateMenuCommand(IMenuCommand s)
-    {
-    	this.mycardspaynow = s;
-    }
-    
-   
+ 
 }

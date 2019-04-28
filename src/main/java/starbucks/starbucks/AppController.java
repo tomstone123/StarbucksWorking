@@ -24,6 +24,8 @@ public class AppController implements IApp {
     private IMenuCommand displayAddcard ;
     private IScreen mycardspay ;
     private IMenuCommand displayMyCardsPay ;
+    private IScreen mycardsoptions ;
+    private IMenuCommand displayMyCardsOptions ;
     private IScreen moreoptions ;
     private IMenuCommand displayMoreOptions ;
 
@@ -41,6 +43,17 @@ public class AppController implements IApp {
               }
               ) ;
         
+        displayMyCardsOptions = new MenuCommand() ;
+        displayMyCardsOptions.setReceiver(
+                new IMenuReceiver() {
+                    /** Command Action */
+                    public void doAction() {
+                        frame.setCurrentScreen( mycardsoptions ) ;
+                        
+                    }
+              }
+              ) ;
+        
         displayMoreOptions = new MenuCommand() ;
         displayMoreOptions.setReceiver(
                 new IMenuReceiver() {
@@ -52,7 +65,7 @@ public class AppController implements IApp {
               }
               ) ;
     	
-    	mycards = new MyCards(displayMyCardsPay, displayMoreOptions) ;
+    	mycards = new MyCards(displayMyCardsPay, displayMyCardsOptions) ;
         store = new Store() ;
         rewards = new Rewards() ;
         payments = new Payments() ;
@@ -82,6 +95,10 @@ public class AppController implements IApp {
         settings = new Settings(displayAddcard) ;
         addcard = new AddCard(displayMyCards, displaySettings) ;
         mycardspay = new MyCardsPay(displayMyCards);
+        mycardsoptions = new MyCardsOptions(displayMoreOptions);
+        moreoptions = new MyCardsMoreOptions();
+        
+
         
         
         displayMyCards.setReceiver(
