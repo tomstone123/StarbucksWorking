@@ -11,7 +11,7 @@ public class CardInfo
 	
 	private String cardNumber = "000000000" ;
 	private String cid = "000" ;
-	private double cashAmount = 0;
+	private double cashAmount = 0.00;
 
     public CardInfo()
     {}
