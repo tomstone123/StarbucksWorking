@@ -52,10 +52,21 @@ public class AppController implements IApp {
                     }
               }
               ) ;
+        
+        displayMyCardsPay = new MenuCommand() ;
+        displayMyCardsPay.setReceiver(
+                new IMenuReceiver() {
+                    /** Command Action */
+                    public void doAction() {
+                        frame.setCurrentScreen( mycardspay ) ;
+                        
+                    }
+              }
+              ) ;
               
         settings = new Settings(displayAddcard) ;
         addcard = new AddCard(displayMyCards, displaySettings) ;
-        mycardspay = new MyCards(displayMyCardsPay);
+        mycardspay = new MyCardsPay();
 
 
         
