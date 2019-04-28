@@ -3,4 +3,6 @@ comment0.target=Rewards
 comment0.text=Rewards\ Screen
 comment1.params=
 comment1.target=Rewards()
-numComments=2
+comment2.params=
+comment2.target=java.lang.String\ display()
+numComments=3

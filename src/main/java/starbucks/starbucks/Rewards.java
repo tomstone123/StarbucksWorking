@@ -10,5 +10,14 @@ public class Rewards extends Screen
     {
 
     }
+    
+    public String display() 
+    {
+        
+        String output =  "\nMake Every\n" ;
+               output += "Visit Count\n" ;
+
+        return output ;
+    }
 
 }

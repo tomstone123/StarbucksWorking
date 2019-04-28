@@ -32,7 +32,7 @@ public class CardInfo
     
     public String getCardNumber()
     {
-    	return cardNumber;
+    	return this.cardNumber;
     }
     
     public void setCID ( String b )
@@ -42,7 +42,7 @@ public class CardInfo
     
     public String getCID()
     {
-    	return cid;
+    	return this.cid;
     }
     
     public void setCashAmount ( double c )
@@ -52,7 +52,7 @@ public class CardInfo
     
     public double getCashAmount()
     {
-    	return cashAmount;
+    	return this.cashAmount;
     }
     
 }

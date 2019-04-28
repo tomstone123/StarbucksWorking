@@ -8,6 +8,7 @@ comment2.target=java.lang.String\ display()
 comment2.text=\r\n\ Pint\ out\ Settings\ Menu\r\n\ @return\ Key\ Pad\ View\ Contents\r\n
 comment3.params=x\ y
 comment3.target=void\ touch(int,\ int)
+comment3.text=\r\n\ Switch\ to\ the\ Add\ Card\ Screen\r\n
 comment4.params=s
 comment4.target=void\ settingOptions(IMenuCommand)
 comment4.text=\r\n\ To\ be\ used\ in\ the\ future\r\n

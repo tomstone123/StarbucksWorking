@@ -35,14 +35,15 @@ public class Settings extends Screen
         return output ;
     }
     
+    /**
+     * Switch to the Add Card Screen
+     */
     public void touch(int x, int y) {
         if ( y == 1)
         {
             if( x > 0 && x < 4 )
             {
-                System.err.println( "Add Card Pressed" ) ;
                 addcardnow.execute();
-                
             }
         }
         

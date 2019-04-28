@@ -22,9 +22,11 @@ public class AppController implements IApp {
     private IMenuCommand displaySettings ;
     private IScreen addcard ;
     private IMenuCommand displayAddcard ;
+    private IScreen mycardspay ;
+    private IMenuCommand displayMyCardsPay ;
 
     public AppController() {
-        mycards = new MyCards() ;
+        mycards = new MyCards(displayMyCardsPay) ;
         store = new Store() ;
         rewards = new Rewards() ;
         payments = new Payments() ;
@@ -53,6 +55,7 @@ public class AppController implements IApp {
               
         settings = new Settings(displayAddcard) ;
         addcard = new AddCard(displayMyCards, displaySettings) ;
+        mycardspay = new MyCards(displayMyCardsPay);
 
 
         

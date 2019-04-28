@@ -19,7 +19,7 @@ public class CID implements ITouchEventHandler, IDisplayComponent, IKeyPadObserv
     
     public CID()
     { 
-        cardInfo = new CardInfo();
+        cardInfo = CardInfo.getInstance();
     }
     
     public void touch(int x, int y) 
@@ -80,8 +80,8 @@ public class CID implements ITouchEventHandler, IDisplayComponent, IKeyPadObserv
         
         if (count == 12)
             {
-            	cardInfo.setCashAmount(newCardValue);
-            	System.err.println("updating new card cash value");
+        		cardInfo.setCID(enteredCID);
+                cardInfo.setCashAmount(newCardValue);
             }
     }
 

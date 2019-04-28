@@ -7,6 +7,7 @@ package starbucks;
 public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPadObserver
 {
     ITouchEventHandler nextHandler ;
+    private CardInfo cardInfo;
     private int count = 0;
     private String enteredCardNumber = "" ;
     
@@ -15,6 +16,12 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
      * @param x Touch X
      * @param y Touch Y
      */
+    
+    public CardNumber()
+    {
+    	cardInfo = CardInfo.getInstance();
+    }
+    
     public void touch(int x, int y) 
     {
         if ( y < 5 )
@@ -72,6 +79,11 @@ public class CardNumber implements ITouchEventHandler, IDisplayComponent, IKeyPa
         {
             enteredCardNumber += key ;
         } 
+        
+        if (count == 9)
+        {
+    		cardInfo.setCID(enteredCardNumber);
+        }
     }
 
 
